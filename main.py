@@ -20,12 +20,15 @@ def longest_run(mylist, key):
         print(counter)
         if i == key:
             counter = counter + 1
+            if i == mylist[len(mylist)-1]:
+                max = counter
 
         else:
             if counter > max:
                 max = counter
             counter = 0
 
+    print(counter)
     return max
     pass
 
@@ -57,7 +60,7 @@ def longest_run_recursive(mylist, key):
 ## Feel free to add your own tests here.
 def test_longest_run():
     assert longest_run([2,12,12,8,12,12,12,0,12,1], 12) == 3
-    assert longest_run([1,1,1,2,3,4,5,1,1,1,1,1,1,0], 1) == 6
+    assert longest_run([1,1,1,2,3,4,5,1,1,1,1], 1) == 4
 
 foo(9)
 test_longest_run()
