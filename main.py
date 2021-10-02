@@ -17,7 +17,7 @@ def longest_run(mylist, key):
     counter = 0
     max = 0
     for i in mylist:
-        print(counter)
+
         if i == key:
             counter = counter + 1
             if i == mylist[len(mylist)-1]:
@@ -28,7 +28,7 @@ def longest_run(mylist, key):
                 max = counter
             counter = 0
 
-    print(counter)
+
     return max
     pass
 
@@ -47,19 +47,21 @@ class Result:
     
     
 def longest_run_recursive(mylist, key):
-    counter = 0
+   """"counter = 0
     max = 0
     if len(mylist) == 1:
         return mylist[1]
-    first = longest_run_recursive[mylist[0:],key]
-    second = longest_run_recursive[mylist[1:],key]
+    first = longest_run_recursive[mylist[0],key]
+    second = longest_run_recursive[mylist[1],key]
     if first == second:
         counter = counter + 1
     else:
         if counter > max:
             max = counter
         counter = 0
-    return max
+    print(max)
+    return max"""
+   return 0
 
 
 ## Feel free to add your own tests here.
@@ -69,4 +71,5 @@ def test_longest_run():
 
 foo(9)
 test_longest_run()
+
 
