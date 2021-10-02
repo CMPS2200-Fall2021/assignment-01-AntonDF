@@ -3,13 +3,33 @@ CMPS 2200  Assignment 1.
 See assignment-01.pdf for details.
 """
 # no imports needed.
-
+"""gives xth number of the fibonnaci sequence"""
 def foo(x):
-    ### TODO
+    if x <= 1:
+        return x
+    else:
+        ra = foo(x-1)
+        rb = foo(x-2)
+        return ra+rb
     pass
 
 def longest_run(mylist, key):
-    ### TODO
+    counter = 0
+    max = 0
+    for i in mylist:
+
+        if i == key:
+            counter = counter + 1
+            if i == mylist[len(mylist)-1]:
+                max = counter
+
+        else:
+            if counter > max:
+                max = counter
+            counter = 0
+
+
+    return max
     pass
 
 
@@ -27,11 +47,29 @@ class Result:
     
     
 def longest_run_recursive(mylist, key):
-    ### TODO
-    pass
+   """"counter = 0
+    max = 0
+    if len(mylist) == 1:
+        return mylist[1]
+    first = longest_run_recursive[mylist[0],key]
+    second = longest_run_recursive[mylist[1],key]
+    if first == second:
+        counter = counter + 1
+    else:
+        if counter > max:
+            max = counter
+        counter = 0
+    print(max)
+    return max"""
+   return 0
+
 
 ## Feel free to add your own tests here.
 def test_longest_run():
     assert longest_run([2,12,12,8,12,12,12,0,12,1], 12) == 3
+    assert longest_run([1,1,1,2,3,4,5,1,1,1,1], 1) == 4
+
+foo(9)
+test_longest_run()
 
 
