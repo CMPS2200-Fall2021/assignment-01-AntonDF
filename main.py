@@ -47,15 +47,20 @@ class Result:
     
     
 def longest_run_recursive(mylist, key):
-    count = 0
+    counter = 0
     max = 0
     if len(mylist) == 1:
-        count = count + 1
-        return mylist[i]
+        return mylist[1]
+    first = longest_run_recursive[mylist[0:],key]
+    second = longest_run_recursive[mylist[1:],key]
+    if first == second:
+        counter = counter + 1
     else:
-        longest_run_recursive(mylist, key)
+        if counter > max:
+            max = counter
+        counter = 0
+    return max
 
-    pass
 
 ## Feel free to add your own tests here.
 def test_longest_run():
